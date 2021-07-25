@@ -72,5 +72,5 @@ if __name__ == "__main__":
         print(f"{C[1]}[{C[3]}Posts{C[1]}] {C[0]}: {C[2]}{i.number_of_posts}")
         print(f"{C[1]}[{C[3]}Website{C[1]}] {C[0]}: {C[2]}{i.website}")
         print(f"{C[1]}[{C[3]}Biography{C[1]}] {C[0]}: {C[2]}{i.biography}")
-        print(f"{C[1]}[{C[3]}Profile Picture Urls{C[1]}] {C[0]}: {C[2]}{i.profile_picture_url}")
+        print(f"{C[1]}[{C[3]}Profile Picture Url{C[1]}] {C[0]}: {C[2]}{i.profile_picture_url}")
     MainScript()
