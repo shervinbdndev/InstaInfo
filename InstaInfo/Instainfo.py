@@ -1,3 +1,6 @@
+from os import write
+
+
 if __name__ == "__main__":
     try:
         import requests
@@ -8,6 +11,7 @@ if __name__ == "__main__":
         import json
         import socket
         import subprocess
+        import io
     except:
         from requests import get
         from instagramy import InstagramUser
@@ -66,15 +70,16 @@ if __name__ == "__main__":
             INPUT = str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[~] >{C[0]} "))
             if str(INPUT) == "help" or str(INPUT) == "Help" or str(INPUT) == "HELP":
                 print("<====================== Help Center ======================>\n"
-                      f"\n{C[3]}Commands :"
+                      f"\n\t\t\t{C[3]}Commands"
                       f"\n{C[1]}help => {C[2]}Opening The Help Center\n"
                       f"\n{C[1]}set username => {C[2]}Setting The Username For Getting Page Information\n"
                       f"\n{C[1]}show banner => {C[2]}Shows The Script banner\n"
-                      f"\n{C[1]}script usage => {C[2]}Shows Script Usage\n"
                       f"\n{C[1]}version => {C[2]}Shows The Script's Version\n"
+                      f"\n{C[1]}license => {C[2]}Shows The Script's License\n"
                       f"\n{C[1]}update script => {C[2]}Download The Latest Update Of Script\n"
                       f"\n{C[1]}exit => {C[2]}Exit the Script\n"
-                      f"\n{C[0]}<=========================================================>\n"
+                      f"\n{C[0]}"
+                      "<=========================================================>\n"
                 )
                 continue
             elif str(INPUT) == "show banner" or str(INPUT) == "Show Banner" or str(INPUT) == "SHOW BANNER":
@@ -82,11 +87,34 @@ if __name__ == "__main__":
                 print(HEADER)
                 continue
             elif str(INPUT) == "version" or str(INPUT) == "Version" or str(INPUT) == "VERSION":
-                with open("version.txt" , "r") as V:
+                with io.open("version.txt" , "r") as V:
                     print(str(V.read(5)))
+                    V.close()
+                    continue
+            elif str(INPUT) == "license" or str(INPUT) == "License" or str(INPUT) == "LICENSE":
+                with io.open("license.txt" , "r") as L:
+                    print(str(L.read(5055)))
+                    L.close()
                     continue
             elif str(INPUT) == "exit" or str(INPUT) == "Exit" or str(INPUT) == "EXIT":
-                break
+                last_input = str(input(f"{C[1]}[{C[3]}?{C[1]}] {C[0]}Do you want to save The Progress In log.txt ?"))
+                if str(last_input) == "y" or str(last_input) == "Y" or str(last_input) == "yes" or str(last_input) == "Yes" or str(last_input) == "YES":
+                    with io.open(r"{}".format("log/log.txt") , "a" , encoding = "utf-8") as LOG:
+                        LOG.write(f"Username : @{str(i.username)}\n")
+                        LOG.write(f"Verified : {str(i.is_verified)}\n")
+                        LOG.write(f"Private : {str(i.is_private)}\n")
+                        LOG.write(f"Full name : {str(i.fullname)}\n")
+                        LOG.write(f"Followers : {str(i.number_of_followers)}\n")
+                        LOG.write(f"Followings : {str(i.number_of_followings)}\n")
+                        LOG.write(f"Posts : {str(i.number_of_posts)}\n")
+                        LOG.write(f"Website : {str(i.website)}\n")
+                        LOG.write(f"Biography : {str(i.biography)}\n")
+                        LOG.write(f"Profile Picture URL : {i.profile_picture_url}")
+                        LOG.write("\n\r\n\r")
+                        LOG.close()
+                        break
+                elif str(last_input) == "n" or str(last_input) == "N" or str(last_input) == "no" or str(last_input) == "No" or str(last_input) == "NO":
+                    break
             elif str(INPUT) == "update script" or str(INPUT) == "Update Script" or str(INPUT) == "UPDATE SCRIPT":
                 try:
                     subprocess.call(["git" , "clone" , "https://github.com/shervin-glitch/InstaInfo"])
@@ -111,5 +139,8 @@ if __name__ == "__main__":
                 print(f"{C[1]}[{C[3]}Website{C[1]}] {C[0]}: {C[2]}{i.website}")
                 print(f"{C[1]}[{C[3]}Biography{C[1]}] {C[0]}: {C[2]}{i.biography}")
                 print(f"{C[1]}[{C[3]}Profile Picture Url{C[1]}] {C[0]}: {C[2]}{i.profile_picture_url}")
+                continue
+            else:
+                print(f"{C[5]}[  !  ] Wrong Command")
                 continue
     MainScript()
