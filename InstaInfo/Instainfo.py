@@ -70,12 +70,14 @@ if __name__ == "__main__":
             INPUT = str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[~] >{C[0]} "))
             if str(INPUT) == "help" or str(INPUT) == "Help" or str(INPUT) == "HELP":
                 print("<====================== Help Center ======================>\n"
-                      f"\n\t\t\t{C[3]}Commands"
                       f"\n{C[1]}help => {C[2]}Opening The Help Center\n"
+                      f"\n\t\t\t{C[3]}Scripts"
                       f"\n{C[1]}scripts/set-username => {C[2]}Setting The Username For Getting Page Information\n"
-                      f"\n{C[1]}scripts/show-banner => {C[2]}Shows The Script banner\n"
+                      f"\n\t\t\t{C[3]}Options"
                       f"\n{C[1]}options/version => {C[2]}Shows The Script's Version\n"
                       f"\n{C[1]}options/license => {C[2]}Shows The Script's License\n"
+                      f"\n\t\t\t{C[3]}Commands"
+                      f"\n{C[1]}show-banner => {C[2]}Shows The Script banner\n"
                       f"\n{C[1]}update-script => {C[2]}Download The Latest Update Of Script\n"
                       f"\n{C[1]}exit => {C[2]}Exit the Script\n"
                       f"\n{C[0]}"
