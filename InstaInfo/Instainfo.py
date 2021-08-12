@@ -80,22 +80,25 @@ if __name__ == "__main__":
                       f"\n\n\t\t\t{C[3]}Commands"
                       f"\n{C[1]}show-banner => {C[2]}Shows The Script banner"
                       f"\n{C[1]}update-script => {C[2]}Download The Latest Update Of Script"
+                      f"\n{C[1]}reset => {C[2]}Change Directory to The Root Directory"
                       f"\n{C[1]}exit => {C[2]}Exit the Script"
                       f"\n{C[0]}"
                       "<=========================================================>\n"
                 )
                 continue
-            elif str(INPUT) == "scripts/show-banner":
+            elif str(INPUT) == "show-banner":
                 HEADER = cfonts.render("InstaInfo" , colors = ["magenta" , "yellow"] , align = "left")
                 print(HEADER)
                 continue
             elif str(INPUT) == "options/version":
                 with io.open("version.txt" , "r") as V:
+                    INPUT = str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[options/version] >{C[0]} "))
                     print(str(V.read(5)))
                     V.close()
                     continue
             elif str(INPUT) == "options/license":
                 with io.open("license.txt" , "r") as L:
+                    INPUT = str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[options/license] >{C[0]} "))
                     print(str(L.read(5055)))
                     L.close()
                     continue
@@ -154,6 +157,9 @@ if __name__ == "__main__":
                 print(f"{C[1]}[{C[3]}Blocked By Other Users{C[1]}] {C[0]}: {C[2]}{i.is_blocked_by_viewer}")
                 print(f"{C[1]}[{C[3]}Biography{C[1]}] {C[0]}: {C[2]}{i.biography}")
                 print(f"{C[1]}[{C[3]}Profile Picture Url{C[1]}] {C[0]}: {C[2]}{i.profile_picture_url}")
+                continue
+            elif str(INPUT) == "reset":
+                INPUT = str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[~] >{C[0]} "))
                 continue
             else:
                 print(f"{C[5]}[  !  ] Wrong Command")
