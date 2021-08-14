@@ -36,6 +36,7 @@ if __name__ == "__main__":
     RE_Q = requests.get("https://api.myip.com").content
     LOAD = json.loads(RE_Q)
     P_IP = LOAD["ip"]
+    C_RY = LOAD["country"]
 
     H = """
              .:--================--:.             
@@ -66,6 +67,7 @@ if __name__ == "__main__":
         time.sleep(1.5)
         print(f"\n\n{C[1]}[{C[3]}Local IP{C[1]}] {C[0]}: {C[2]}{L_IP}")
         print(f"\n{C[1]}[{C[3]}Public IP{C[1]}] {C[0]}: {C[2]}{P_IP}")
+        print(f"\n{C[1]}[{C[3]}Country{C[1]}] {C[0]}: {C[2]}{C_RY}")
         while True:
             INPUT = str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[~] >{C[0]} "))
             if str(INPUT) == "help" or str(INPUT) == "Help" or str(INPUT) == "HELP":
