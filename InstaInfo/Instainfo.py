@@ -1,6 +1,3 @@
-from os import write
-
-
 if __name__ == "__main__":
     try:
         import requests
@@ -68,9 +65,7 @@ if __name__ == "__main__":
         print(f"\n\n{C[1]}[{C[3]}Local IP{C[1]}] {C[0]}: {C[2]}{L_IP}")
         print(f"\n{C[1]}[{C[3]}Public IP{C[1]}] {C[0]}: {C[2]}{P_IP}")
         print(f"\n{C[1]}[{C[3]}Country{C[1]}] {C[0]}: {C[2]}{C_RY}")
-        while True:
-            INPUT = str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[~] >{C[0]} "))
-            print("<=========================================================>\n"
+        print(f"\n\n{C[0]}<=========================================================>\n"
                       f"\n\t\t\t{C[3]}Help"
                       f"\n{C[1]}help => {C[2]}Opening The Help Center\n"
                       f"\n\n\t\t\t{C[3]}Scripts"
@@ -85,7 +80,24 @@ if __name__ == "__main__":
                       f"\n{C[0]}"
                       "<=========================================================>\n"
                 )
+        while True:
+            INPUT = str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[~] >{C[0]} "))
             if str(INPUT) == "help" or str(INPUT) == "Help" or str(INPUT) == "HELP":
+                print(f"\n\n{C[0]}<=========================================================>\n"
+                      f"\n\t\t\t{C[3]}Help"
+                      f"\n{C[1]}help => {C[2]}Opening The Help Center\n"
+                      f"\n\n\t\t\t{C[3]}Scripts"
+                      f"\n{C[1]}scripts/set-username => {C[2]}Setting The Username For Getting Page Information"
+                      f"\n\n\t\t\t{C[3]}Options"
+                      f"\n{C[1]}options/version => {C[2]}Shows The Script's Version"
+                      f"\n{C[1]}options/license => {C[2]}Shows The Script's License\n"
+                      f"\n\n\t\t\t{C[3]}Commands"
+                      f"\n{C[1]}show-banner => {C[2]}Shows The Script banner"
+                      f"\n{C[1]}update-script => {C[2]}Download The Latest Update Of Script"
+                      f"\n{C[1]}exit => {C[2]}Exit the Script"
+                      f"\n{C[0]}"
+                      "<=========================================================>\n"
+                )
                 continue
             elif str(INPUT) == "show-banner":
                 HEADER = cfonts.render("InstaInfo" , colors = ["magenta" , "yellow"] , align = "left")
