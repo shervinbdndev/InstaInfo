@@ -91,13 +91,11 @@ if __name__ == "__main__":
                 continue
             elif str(INPUT) == "options/version":
                 with io.open("version.txt" , "r") as V:
-                    INPUT = str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[options/version] >{C[0]} "))
                     print(str(V.read(5)))
                     V.close()
                     continue
             elif str(INPUT) == "options/license":
                 with io.open("license.txt" , "r") as L:
-                    INPUT = str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[options/license] >{C[0]} "))
                     print(str(L.read(5055)))
                     L.close()
                     continue
