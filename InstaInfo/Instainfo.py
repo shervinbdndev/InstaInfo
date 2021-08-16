@@ -34,10 +34,7 @@ if __name__ == "__main__":
     F = [
         "black" , "red" , "green" , "yellow" ,
         "blue" , "magenta" , "cyan" , "white" ,
-        "gray" , "bright_white" , "bright_yellow"
-        "bright_red" , "bright_green" ,
-        "bright_blue" , "bright_cyan" ,
-        "bright_magenta"
+        "gray"
     ]
 
     L_IP = socket.gethostbyname(socket.gethostname())
