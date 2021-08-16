@@ -28,7 +28,7 @@ if __name__ == "__main__":
         f"{colorama.ansi.Fore.CYAN}",
         f"{colorama.ansi.Fore.MAGENTA}",
         f"{colorama.ansi.Fore.YELLOW}",
-        f"{colorama.ansi.Fore.RED}"
+        f"{colorama.ansi.Fore.RED}" 
     ]
 
     F = [
@@ -46,12 +46,12 @@ if __name__ == "__main__":
     P_IP = LOAD["ip"]
     C_RY = LOAD["country"]
 
-    H = """
-             .:--================--:.             
+    H = f"""
+             {random.choice(C) or random.choice(C)}.:--================--:.             
            :+**++================+***+:           
          .+*+-.                    .-**+.         
          +**.                   -++: .**+         
-        .**=         :-====-:   +**-  =**:        
+        .**=         {random.choice(C) or random.choice(C)}:-====-:   +**-  =**:        
         :**-      .=***+==+***=.      -**-        
         -**:     :+*+:      :+**:     :**-        
         -++:    .+++          +**.    :**-        
@@ -59,7 +59,7 @@ if __name__ == "__main__":
         -++:    .++=          +**.    :**-        
         :++:     :++=:      :++*:     :**-        
         :++:      .=+++====+++=.      -**-        
-        .++-         :--==--:         =**:        
+        .++-         {random.choice(C) or random.choice(C)}:--==--:         =**:        
          =++.                        .**+         
           =++-.                    .-**+.         
            :=+++====---==========++**+-           
@@ -67,7 +67,7 @@ if __name__ == "__main__":
         """
 
     def HeaderFunc():
-        print(f"{C[3]}{H}")
+        print(f"{H}")
         time.sleep(1.5)
     HeaderFunc()
 
