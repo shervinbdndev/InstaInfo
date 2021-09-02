@@ -27,14 +27,16 @@ if __name__ == "__main__":
         from sys import exit
         from platform import system
 
+    __PIPVER__ = str(pip.__version__)
+
     try:
-        if pip.__version__ == str(pip.__version__):
-            if platform.system() == "Linux":
-                pass
+        if pip.__version__ == str(__PIPVER__):
+            if platform.system() == "Windows":
+                subprocess.call(["python3" , "-m" , "pip" , "install" , "--upgrade" , "pip"])
             else:
                 sys.exit(0)
         else:
-            subprocess.call(["python3" , "-m" , "pip" , "install" , "--upgrade" , "pip"])
+            raise 0
     except Exception as E:
         raise E
 
