@@ -9,7 +9,10 @@ if __name__ == "__main__":
         import socket
         import subprocess
         import io
+        import sys
+        import pip
         import random
+        import platform
     except:
         from requests import get
         from instagramy import InstagramUser
@@ -21,6 +24,19 @@ if __name__ == "__main__":
         from socket import gethostbyname , gethostname
         from subprocess import call
         from random import choice
+        from sys import exit
+        from platform import system
+
+    try:
+        if pip.__version__ == str(pip.__version__):
+            if platform.system() == "Linux":
+                pass
+            else:
+                sys.exit(0)
+        else:
+            subprocess.call(["python3" , "-m" , "pip" , "install" , "--upgrade" , "pip"])
+    except Exception as E:
+        raise E
 
     C = [
         f"{colorama.ansi.Fore.WHITE}",
@@ -44,11 +60,11 @@ if __name__ == "__main__":
     C_RY = LOAD["country"]
 
     H = f"""
-             {random.choice(C) or random.choice(C)}.:--================--:.             
+             {random.choice(C) or random.choice(C) and random.choice(C)}.:--================--:.             
            :+**++================+***+:           
          .+*+-.                    .-**+.         
          +**.                   -++: .**+         
-        .**=         {random.choice(C) or random.choice(C)}:-====-:   +**-  =**:        
+        .**=         {random.choice(C) or random.choice(C) and random.choice(C)}:-====-:   +**-  =**:        
         :**-      .=***+==+***=.      -**-        
         -**:     :+*+:      :+**:     :**-        
         -++:    .+++          +**.    :**-        
@@ -56,7 +72,7 @@ if __name__ == "__main__":
         -++:    .++=          +**.    :**-        
         :++:     :++=:      :++*:     :**-        
         :++:      .=+++====+++=.      -**-        
-        .++-         {random.choice(C) or random.choice(C)}:--==--:         =**:        
+        .++-         {random.choice(C) or random.choice(C) and random.choice(C)}:--==--:         =**:        
          =++.                        .**+         
           =++-.                    .-**+.         
            :=+++====---==========++**+-           
@@ -70,7 +86,8 @@ if __name__ == "__main__":
 
     def MainScript():
         time.sleep(1.5)
-        print(f"\n\n{C[1]}[{C[3]}Local IP{C[1]}] {C[0]}: {C[2]}{L_IP}")
+        print(f"\n\n{C[1]}[{C[3]}Python Version{C[1]}] {C[0]}: {C[2]}{pip.__version__}")
+        print(f"\n{C[1]}[{C[3]}Local IP{C[1]}] {C[0]}: {C[2]}{L_IP}")
         print(f"\n{C[1]}[{C[3]}Public IP{C[1]}] {C[0]}: {C[2]}{P_IP}")
         print(f"\n{C[1]}[{C[3]}Country{C[1]}] {C[0]}: {C[2]}{C_RY}")
         print(f"\n\n{C[0]}<=========================================================>\n"
@@ -86,7 +103,7 @@ if __name__ == "__main__":
                       f"\n{C[1]}update-script => {C[2]}Download The Latest Update Of Script"
                       f"\n{C[1]}exit => {C[2]}Exit the Script"
                       f"\n{C[0]}"
-                      f"<=========================================================>\n"
+                      f"\n<=========================================================>\n"
                 )
         while True:
             INPUT = str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[~] >{C[0]} "))
@@ -104,7 +121,7 @@ if __name__ == "__main__":
                       f"\n{C[1]}update-script => {C[2]}Download The Latest Update Of Script"
                       f"\n{C[1]}exit => {C[2]}Exit the Script"
                       f"\n{C[0]}"
-                      f"<=========================================================>\n"
+                      f"\n<=========================================================>\n"
                 )
                 continue
             elif str(INPUT) == "show-banner":
@@ -154,6 +171,7 @@ if __name__ == "__main__":
                     subprocess.call(["rm" , "-rf" , "InstaInfo"])
                     subprocess.call(["git" , "clone" , "https://github.com/shervin-glitch/InstaInfo"])
                     print("[+] The Script Directory is Cloned")
+                    raise Err
                 finally:
                     print("\n")
                 continue
