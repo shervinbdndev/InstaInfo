@@ -31,8 +31,8 @@ if __name__ == "__main__":
 
     try:
         if pip.__version__ == str(__PIPVER__):
-            if platform.system() == "Windows":
-                subprocess.call(["python3" , "-m" , "pip" , "install" , "--upgrade" , "pip"])
+            if platform.system() == "Linux":
+                pass
             else:
                 sys.exit(0)
         else:
