@@ -32,6 +32,7 @@ if __name__ == "__main__":
             while True:
                 INPUT = str(input("[?] Do you want To Download and install Requirements ? (y/n) : "))
                 if str(INPUT) == "y" or str(INPUT) == "Y" or str(INPUT) == "yes" or str(INPUT) == "Yes":
+                    subprocess.call(["python3" , "-m" , "pip" , "install" , "--upgrade" , "pip"])
                     subprocess.call(["pip3" , "install" , "requests"]) and subprocess.call(["pip" , "install" , "requests"])
                     subprocess.call(["pip3" , "install" , "sockets"]) and subprocess.call(["pip" , "install" , "sockets"])
                     subprocess.call(["pip3" , "install" , "colorama"]) and subprocess.call(["pip" , "install" , "colorama"])
