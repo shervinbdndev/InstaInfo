@@ -1,45 +1,36 @@
+import subprocess;import sys;import builtins
+
+class InstallDependencies:
+    def __init__(self , *args , **kwargs) -> builtins.str:
+        super(InstallDependencies , self).__init__(*args , **kwargs)
+        self.executable = sys.executable
+        self.interpreter = builtins.str("pip")
+
+    def start(self):
+        print("[+] Starting . . .")
+
+    def update(self):
+        subprocess.call([
+            self.executable , "-m" , self.interpreter , "install" ,\
+            "--upgrade" , self.interpreter
+        ])
+
+    def install(self , package : str):
+        subprocess.call([
+            self.executable , "-m" , self.interpreter ,\
+            "install" , package
+        ])
+
+    def complete(self):
+        print("[+] All Packages Installed")
+
 if __name__ == "__main__":
-    import sys
-    import subprocess
-
-    def PackageManager(param = None , event = True):
-        if param == None and event == True:
-            try:
-                import requests
-            except:
-                print(r"[-] requests Package is not Installed")
-            try:
-                import instagramy
-            except:
-                print(r"[-] instagramy package is not Installed")
-            try:
-                import colorama
-            except:
-                print(r"[-] colorama package is not Installed")
-            try:
-                import cfonts
-            except:
-                print(r"[-] cfonts package is not Installed")
-            try:
-                import socket
-            except:
-                print(r"[-] socket package is not Installed")
-
-    PackageManager()
-
-    def Installer(param = None , event = True):
-        if param == None and event == True:
-            while True:
-                INPUT = str(input("[?] Do you want To Download and install Requirements ? (y/n) : "))
-                if str(INPUT) == "y" or str(INPUT) == "Y" or str(INPUT) == "yes" or str(INPUT) == "Yes":
-                    subprocess.call(["python3" , "-m" , "pip" , "install" , "--upgrade" , "pip"])
-                    subprocess.call(["pip3" , "install" , "requests"]) and subprocess.call(["pip" , "install" , "requests"])
-                    subprocess.call(["pip3" , "install" , "sockets"]) and subprocess.call(["pip" , "install" , "sockets"])
-                    subprocess.call(["pip3" , "install" , "colorama"]) and subprocess.call(["pip" , "install" , "colorama"])
-                    subprocess.call(["pip3" , "install" , "instagramy"]) and subprocess.call(["pip" , "install" , "instagramy"])
-                    subprocess.call(["pip3" , "install" , "python-cfonts"]) and subprocess.call(["pip" , "install" , "python-cfonts"])
-                    print(r"[+] Packages Successfully Installed")
-                    break
-                elif str(INPUT) == "n" or str(INPUT) == "N" or str(INPUT) == "no" or str(INPUT) == "No":
-                    break
-    Installer()
+    InstallDependencies().start()
+    InstallDependencies().update()
+    InstallDependencies().install("sockets")
+    InstallDependencies().install("colorama")
+    InstallDependencies().install("requests")
+    InstallDependencies().install("instagramy")
+    InstallDependencies().install("instaloader")
+    InstallDependencies().install("python-cfonts")
+    InstallDependencies().complete()
