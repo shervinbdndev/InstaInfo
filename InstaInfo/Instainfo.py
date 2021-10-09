@@ -61,7 +61,7 @@ if __name__ == "__main__":
 
     def MainScript():
         time.sleep(1.5)
-        print(f"\n\n{C[1]}[{C[3]}Python Version{C[1]}] {C[0]}: {C[2]}{sys.version or platform.python_version()}")
+        print(f"\n\n{C[1]}[{C[3]}Python Version{C[1]}] {C[0]}: {C[2]}{builtins.str(sys.version[0:6] or platform.python_version())}")
         print(f"\n{C[1]}[{C[3]}Local IP{C[1]}] {C[0]}: {C[2]}{builtins.str(socket.gethostbyname(socket.gethostname()))}")
         print(f"\n{C[1]}[{C[3]}Public IP{C[1]}] {C[0]}: {C[2]}{LOAD['ip']}")
         print(f"\n{C[1]}[{C[3]}Country{C[1]}] {C[0]}: {C[2]}{LOAD['country']}")
