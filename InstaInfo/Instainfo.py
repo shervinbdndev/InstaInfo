@@ -181,10 +181,12 @@ if __name__ == "__main__":
                 INPUT = builtins.list(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[scripts/get-likes] >{C[0]} ").split("/"))
                 l = instagramy.InstagramPost(INPUT[4])
                 print(f"\n{C[1]}[{C[3]}Number Of Likes{C[1]}] {C[0]}: {C[2]}{builtins.str(l.number_of_likes)}")
+                continue
             elif builtins.str(INPUT) == "scripts/get-comments":
                 INPUT = builtins.list(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[scripts/get-comments] >{C[0]} ").split("/"))
                 l = instagramy.InstagramPost(INPUT[4])
                 print(f"\n{C[1]}[{C[3]}Number Of Comments{C[1]}] {C[0]}: {C[2]}{builtins.str(l.number_of_comments)}")
+                continue
             else:
                 print(f"{C[5]}[  !  ] Wrong Command")
                 continue
