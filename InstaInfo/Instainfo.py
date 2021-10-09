@@ -31,7 +31,6 @@ if __name__ == "__main__":
         "gray"
     ]
 
-    L_IP = socket.gethostbyname(socket.gethostname())
     RE_Q = requests.get("https://api.myip.com").content
     LOAD = json.loads(RE_Q)
 
@@ -63,7 +62,7 @@ if __name__ == "__main__":
     def MainScript():
         time.sleep(1.5)
         print(f"\n\n{C[1]}[{C[3]}Python Version{C[1]}] {C[0]}: {C[2]}{pip.__version__}")
-        print(f"\n{C[1]}[{C[3]}Local IP{C[1]}] {C[0]}: {C[2]}{L_IP}")
+        print(f"\n{C[1]}[{C[3]}Local IP{C[1]}] {C[0]}: {C[2]}{builtins.str(socket.gethostbyname(socket.gethostname()))}")
         print(f"\n{C[1]}[{C[3]}Public IP{C[1]}] {C[0]}: {C[2]}{LOAD['ip']}")
         print(f"\n{C[1]}[{C[3]}Country{C[1]}] {C[0]}: {C[2]}{LOAD['country']}")
         print(f"\n\n{C[0]}<-------------------------------------------------------------------->\n"
