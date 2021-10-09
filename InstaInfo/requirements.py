@@ -15,7 +15,7 @@ class InstallDependencies:
             "--upgrade" , self.interpreter
         ])
 
-    def install(self , package : str):
+    def install(self , package : builtins.str):
         subprocess.call([
             self.executable , "-m" , self.interpreter ,\
             "install" , package
