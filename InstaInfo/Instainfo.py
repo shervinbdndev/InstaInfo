@@ -34,8 +34,6 @@ if __name__ == "__main__":
     L_IP = socket.gethostbyname(socket.gethostname())
     RE_Q = requests.get("https://api.myip.com").content
     LOAD = json.loads(RE_Q)
-    P_IP = LOAD["ip"]
-    C_RY = LOAD["country"]
 
     H = f"""
              {random.choice(C) or random.choice(C) and random.choice(C)}.:--================--:.             
@@ -66,8 +64,8 @@ if __name__ == "__main__":
         time.sleep(1.5)
         print(f"\n\n{C[1]}[{C[3]}Python Version{C[1]}] {C[0]}: {C[2]}{pip.__version__}")
         print(f"\n{C[1]}[{C[3]}Local IP{C[1]}] {C[0]}: {C[2]}{L_IP}")
-        print(f"\n{C[1]}[{C[3]}Public IP{C[1]}] {C[0]}: {C[2]}{P_IP}")
-        print(f"\n{C[1]}[{C[3]}Country{C[1]}] {C[0]}: {C[2]}{C_RY}")
+        print(f"\n{C[1]}[{C[3]}Public IP{C[1]}] {C[0]}: {C[2]}{LOAD['ip']}")
+        print(f"\n{C[1]}[{C[3]}Country{C[1]}] {C[0]}: {C[2]}{LOAD['country']}")
         print(f"\n\n{C[0]}<-------------------------------------------------------------------->\n"
                       f"\n{C[3]}HELP"
                       f"\n{C[1]}help => {C[2]}Opening The Help Center\n"
