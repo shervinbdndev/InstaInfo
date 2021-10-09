@@ -31,6 +31,5 @@ if __name__ == "__main__":
     InstallDependencies().install("colorama")
     InstallDependencies().install("requests")
     InstallDependencies().install("instagramy")
-    InstallDependencies().install("instaloader")
     InstallDependencies().install("python-cfonts")
     InstallDependencies().complete()
