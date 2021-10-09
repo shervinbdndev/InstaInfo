@@ -36,11 +36,11 @@ if __name__ == "__main__":
     LOAD = json.loads(RE_Q)
 
     H = f"""
-             {random.choice(C) or random.choice(C) and random.choice(C)}.:--================--:.             
+             {random.choice(C[0::]) or random.choice(C[0::]) and random.choice(C[0::])}.:--================--:.             
            :+**++================+***+:           
          .+*+-.                    .-**+.         
          +**.                   -++: .**+         
-        .**=         {random.choice(C) or random.choice(C) and random.choice(C)}:-====-:   +**-  =**:        
+        .**=         {random.choice(C[0::]) or random.choice(C[0::]) and random.choice(C[0::])}:-====-:   +**-  =**:        
         :**-      .=***+==+***=.      -**-        
         -**:     :+*+:      :+**:     :**-        
         -++:    .+++          +**.    :**-        
@@ -48,7 +48,7 @@ if __name__ == "__main__":
         -++:    .++=          +**.    :**-        
         :++:     :++=:      :++*:     :**-        
         :++:      .=+++====+++=.      -**-        
-        .++-         {random.choice(C) or random.choice(C) and random.choice(C)}:--==--:         =**:        
+        .++-         {random.choice(C[0::]) or random.choice(C[0::]) and random.choice(C[0::])}:--==--:         =**:        
          =++.                        .**+         
           =++-.                    .-**+.         
            :=+++====---==========++**+-           
