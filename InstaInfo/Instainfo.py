@@ -54,6 +54,18 @@ if __name__ == "__main__":
               ::----=============--:.
         """
 
+
+    def CheckSystem(systemType :builtins.str = platform.system()):
+        if systemType == "Linux":
+            try:
+                pass
+            except Exception:
+                sys.exit(0)
+        else:
+            sys.exit(0)
+    CheckSystem()
+
+
     def HeaderFunc():
         print(f"{H}")
         time.sleep(1.5)
@@ -67,7 +79,7 @@ if __name__ == "__main__":
         print(f"\n{C[1]}[{C[3]}Country{C[1]}] {C[0]}: {C[2]}{LOAD['country']}")
         print(f"\n\n{C[0]}<-------------------------------------------------------------------->\n"
                       f"\n{C[3]}HELP"
-                      f"\n{C[1]}help => {C[2]}Opening The Help Center\n"
+                      f"\n{C[1]}[{C[3]}?{C[1]}] help => {C[2]}Opening The Help Center\n"
                       f"\n\n{C[3]}SCRIPTS"
                       f"\n{C[1]}[{C[3]}0{C[1]}] scripts/print-information => {C[2]}Setting The Username For Getting Page Information"
                       f"\n{C[1]}[{C[3]}1{C[1]}] scripts/get-likes => {C[2]}Get Likes of a Post"
@@ -84,10 +96,10 @@ if __name__ == "__main__":
                 )
         while True:
             INPUT = builtins.str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[~] >{C[0]} "))
-            if builtins.str(INPUT) == "help" or builtins.str(INPUT) == "Help" or builtins.str(INPUT) == "HELP":
+            if builtins.str(INPUT) == "help" or builtins.str(INPUT) == "Help" or builtins.str(INPUT) == "HELP" or builtins.str(INPUT) == "?":
                 print(f"\n\n{C[0]}<-------------------------------------------------------------------->\n"
                       f"\n{C[3]}HELP"
-                      f"\n{C[1]}help => {C[2]}Opening The Help Center\n"
+                      f"\n{C[1]}[{C[3]}?{C[1]}] help => {C[2]}Opening The Help Center\n"
                       f"\n\n{C[3]}SCRIPTS"
                       f"\n{C[1]}[{C[3]}0{C[1]}] scripts/print-information => {C[2]}Setting The Username For Getting Page Information"
                       f"\n{C[1]}[{C[3]}1{C[1]}] scripts/get-likes => {C[2]}Get Likes of a Post"
