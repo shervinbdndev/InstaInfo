@@ -13,6 +13,7 @@ if __name__ == "__main__":
         import sys
         import random
         import builtins
+        import shutil
         import platform
     except:
         import subprocess;import sys;subprocess.call(sys.exit(0))
@@ -52,14 +53,20 @@ if __name__ == "__main__":
          =++.                        .**+         
           =++-.                    .-**+.         
            :=+++====---==========++**+-           
-              ::----=============--:.
-        """
+              ::----=============--:.\n
+                            {C[1]}Version: {C[0]}10.1.4
+                            {C[1]}By: {C[0]}https://github.com/shervin-glitch/"""
 
 
     def CheckSystem(systemType :builtins.str = platform.system()):
         if systemType == "Linux":
             try:
                 os.system("clear")
+            except Exception:
+                sys.exit(0)
+        elif systemType == "Windows":
+            try:
+                os.system("cls")
             except Exception:
                 sys.exit(0)
         else:
@@ -82,18 +89,18 @@ if __name__ == "__main__":
                       f"\n{C[3]}HELP"
                       f"\n{C[1]}[{C[3]}?{C[1]}] help => {C[2]}Opening The Help Center\n"
                       f"\n\n{C[3]}SCRIPTS"
-                      f"\n{C[1]}[{C[3]}0{C[1]}] scripts/print-information => {C[2]}Setting The Username For Getting Page Information"
-                      f"\n{C[1]}[{C[3]}1{C[1]}] scripts/get-likes => {C[2]}Get Likes of a Post"
-                      f"\n{C[1]}[{C[3]}2{C[1]}] scripts/get-comments => {C[2]}Get comments of a Post"
+                      f"\n{C[1]}[{C[3]}0{C[1]}] scripts/print-info => {C[2]}Enter Username For Getting Page Information"
+                      f"\n{C[1]}[{C[3]}1{C[1]}] scripts/get-likes => {C[2]}Enter Post Full URL to Get Likes of a Post"
+                      f"\n{C[1]}[{C[3]}2{C[1]}] scripts/get-comments => {C[2]}Enter Post Full URL to Get comments of a Post"
+                      f"\n{C[1]}[{C[3]}3{C[1]}] scripts/remover => {C[2]}Enter The Adderss of Old Script Directory to Delete\n"
                       f"\n\n{C[3]}OPTIONS"
                       f"\n{C[1]}[{C[3]}v{C[1]}] options/version => {C[2]}Shows The Script's Version"
                       f"\n{C[1]}[{C[3]}l{C[1]}] options/license => {C[2]}Shows The Script's License\n"
                       f"\n\n{C[3]}COMMANDS"
                       f"\n{C[1]}[{C[3]}77{C[1]}] show-banner => {C[2]}Shows The Script banner"
-                      f"\n{C[1]}[{C[3]}88{C[1]}] update-script => {C[2]}Download The Latest Update Of Script"
+                      f"\n{C[1]}[{C[3]}88{C[1]}] update-script => {C[2]}Download The Latest Update Of Script(This Command is Only Able to run in Linux)"
                       f"\n{C[1]}[{C[3]}99{C[1]}] exit => {C[2]}Exit the Script"
-                      f"\n{C[0]}"
-                      f"\n<-------------------------------------------------------------------->\n"
+                      f"\n\n{C[0]}<-------------------------------------------------------------------->\n"
                 )
         while True:
             INPUT = builtins.str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[~] >{C[0]} "))
@@ -102,18 +109,18 @@ if __name__ == "__main__":
                       f"\n{C[3]}HELP"
                       f"\n{C[1]}[{C[3]}?{C[1]}] help => {C[2]}Opening The Help Center\n"
                       f"\n\n{C[3]}SCRIPTS"
-                      f"\n{C[1]}[{C[3]}0{C[1]}] scripts/print-information => {C[2]}Setting The Username For Getting Page Information"
-                      f"\n{C[1]}[{C[3]}1{C[1]}] scripts/get-likes => {C[2]}Get Likes of a Post"
-                      f"\n{C[1]}[{C[3]}2{C[1]}] scripts/get-comments => {C[2]}Get comments of a Post"
+                      f"\n{C[1]}[{C[3]}0{C[1]}] scripts/print-info => {C[2]}Enter Username For Getting Page Information"
+                      f"\n{C[1]}[{C[3]}1{C[1]}] scripts/get-likes => {C[2]}Enter Post Full URL to Get Likes of a Post"
+                      f"\n{C[1]}[{C[3]}2{C[1]}] scripts/get-comments => {C[2]}Enter Post Full URL to Get comments of a Post"
+                      f"\n{C[1]}[{C[3]}3{C[1]}] scripts/remover => {C[2]}Enter The Adderss of Old Script Directory to Delete\n"
                       f"\n\n{C[3]}OPTIONS"
                       f"\n{C[1]}[{C[3]}v{C[1]}] options/version => {C[2]}Shows The Script's Version"
                       f"\n{C[1]}[{C[3]}l{C[1]}] options/license => {C[2]}Shows The Script's License\n"
                       f"\n\n{C[3]}COMMANDS"
                       f"\n{C[1]}[{C[3]}77{C[1]}] show-banner => {C[2]}Shows The Script banner"
-                      f"\n{C[1]}[{C[3]}88{C[1]}] update-script => {C[2]}Download The Latest Update Of Script"
+                      f"\n{C[1]}[{C[3]}88{C[1]}] update-script => {C[2]}Download The Latest Update Of Script(This Command is Only Able to run in Linux)"
                       f"\n{C[1]}[{C[3]}99{C[1]}] exit => {C[2]}Exit the Script"
-                      f"\n{C[0]}"
-                      f"\n<-------------------------------------------------------------------->\n"
+                      f"\n\n{C[0]}<-------------------------------------------------------------------->\n"
                 )
                 continue
             elif builtins.str(INPUT) == "show-banner" or builtins.str(INPUT) == "77":
@@ -122,7 +129,7 @@ if __name__ == "__main__":
                 continue
             elif builtins.str(INPUT) == "options/version" or builtins.str(INPUT) == "v":
                 with io.open(file = "version.txt" , mode = "r") as V:
-                    print(builtins.str(V.read(5)))
+                    print(builtins.str(V.read(10)))
                     V.close()
                     continue
             elif builtins.str(INPUT) == "options/license" or builtins.str(INPUT) == "l":
@@ -160,18 +167,19 @@ if __name__ == "__main__":
                     break
             elif builtins.str(INPUT) == "update-script" or builtins.str(INPUT) == "88":
                 try:
+                    subprocess.call(["cd" , "Desktop"])
                     subprocess.call(["git" , "clone" , "https://github.com/shervin-glitch/InstaInfo"])
-                    print("[+] The Script Directory is Cloned")
+                    print("[+] The New Script Directory is Cloned in Desktop")
                 except Exception as Err:
-                    subprocess.call(["rm" , "-rf" , "InstaInfo"])
+                    subprocess.call(["cd" , "Desktop"])
                     subprocess.call(["git" , "clone" , "https://github.com/shervin-glitch/InstaInfo"])
-                    print("[+] The Script Directory is Cloned")
+                    print("[+] The New Script Directory is Cloned in Desktop")
                     raise Err
                 finally:
                     print("\n")
                 continue
-            elif builtins.str(INPUT) == "scripts/print-information" or builtins.str(INPUT) == "0":
-                INPUT = builtins.str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[scripts/print-information] >{C[0]} "))
+            elif builtins.str(INPUT) == "scripts/print-info" or builtins.str(INPUT) == "0":
+                INPUT = builtins.str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[scripts/print-info] >{C[0]} "))
                 i = instagramy.InstagramUser(INPUT)
                 print(f"\n{C[1]}[{C[3]}Verified{C[1]}] {C[0]}: {C[2]}{builtins.str(i.is_verified)}")
                 print(f"{C[1]}[{C[3]}Private{C[1]}] {C[0]}: {C[2]}{builtins.str(i.is_private)}")
@@ -204,6 +212,17 @@ if __name__ == "__main__":
                 print(f"\n{C[1]}[{C[3]}Post ID{C[1]}] {C[0]}: {C[2]}{builtins.str(INPUT[4])}")
                 print(f"\n{C[1]}[{C[3]}Number Of Comments{C[1]}] {C[0]}: {C[2]}{builtins.str(l.number_of_comments)}")
                 continue
+            elif builtins.str(INPUT) == "scripts/remover" or builtins.str(INPUT) == "3":
+                INPUT = builtins.str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[scripts/{C[5]}REMOVER{C[2]}] >{C[0]} "))
+                if platform.system() == builtins.str("Windows") or platform.system() == builtins.str("Linux"):
+                    if os.path.exists(builtins.str(INPUT)):
+                        if os.path.exists(INPUT + "\InstaInfo"):
+                            os.chdir(INPUT)
+                            shutil.rmtree("InstaInfo")
+                        else:
+                            raise Exception
+                    else:
+                        print("Address Doesn't Exists")
             else:
                 print(f"{C[5]}[  !  ] Wrong Command")
                 continue
