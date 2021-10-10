@@ -1,5 +1,6 @@
 if __name__ == "__main__":
     try:
+        import os
         import requests
         import instagramy
         import colorama
@@ -58,7 +59,7 @@ if __name__ == "__main__":
     def CheckSystem(systemType :builtins.str = platform.system()):
         if systemType == "Linux":
             try:
-                pass
+                os.system("clear")
             except Exception:
                 sys.exit(0)
         else:
