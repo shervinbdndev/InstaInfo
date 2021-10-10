@@ -69,16 +69,16 @@ if __name__ == "__main__":
                       f"\n{C[3]}HELP"
                       f"\n{C[1]}help => {C[2]}Opening The Help Center\n"
                       f"\n\n{C[3]}SCRIPTS"
-                      f"\n{C[1]}scripts/print-information => {C[2]}Setting The Username For Getting Page Information"
-                      f"\n{C[1]}scripts/get-likes => {C[2]}Get Likes of a Post"
-                      f"\n{C[1]}scripts/get-comments => {C[2]}Get comments of a Post"
+                      f"\n{C[1]}[{C[3]}0{C[1]}] scripts/print-information => {C[2]}Setting The Username For Getting Page Information"
+                      f"\n{C[1]}[{C[3]}1{C[1]}] scripts/get-likes => {C[2]}Get Likes of a Post"
+                      f"\n{C[1]}[{C[3]}2{C[1]}] scripts/get-comments => {C[2]}Get comments of a Post"
                       f"\n\n{C[3]}OPTIONS"
-                      f"\n{C[1]}options/version => {C[2]}Shows The Script's Version"
-                      f"\n{C[1]}options/license => {C[2]}Shows The Script's License\n"
+                      f"\n{C[1]}[{C[3]}v{C[1]}] options/version => {C[2]}Shows The Script's Version"
+                      f"\n{C[1]}[{C[3]}l{C[1]}] options/license => {C[2]}Shows The Script's License\n"
                       f"\n\n{C[3]}COMMANDS"
-                      f"\n{C[1]}show-banner => {C[2]}Shows The Script banner"
-                      f"\n{C[1]}update-script => {C[2]}Download The Latest Update Of Script"
-                      f"\n{C[1]}exit => {C[2]}Exit the Script"
+                      f"\n{C[1]}[{C[3]}77{C[1]}] show-banner => {C[2]}Shows The Script banner"
+                      f"\n{C[1]}[{C[3]}88{C[1]}] update-script => {C[2]}Download The Latest Update Of Script"
+                      f"\n{C[1]}[{C[3]}99{C[1]}] exit => {C[2]}Exit the Script"
                       f"\n{C[0]}"
                       f"\n<-------------------------------------------------------------------->\n"
                 )
@@ -89,37 +89,39 @@ if __name__ == "__main__":
                       f"\n{C[3]}HELP"
                       f"\n{C[1]}help => {C[2]}Opening The Help Center\n"
                       f"\n\n{C[3]}SCRIPTS"
-                      f"\n{C[1]}scripts/print-information => {C[2]}Setting The Username For Getting Page Information"
-                      f"\n{C[1]}scripts/get-likes => {C[2]}Get Likes of a Post"
-                      f"\n{C[1]}scripts/get-comments => {C[2]}Get comments of a Post"
+                      f"\n{C[1]}[{C[3]}0{C[1]}] scripts/print-information => {C[2]}Setting The Username For Getting Page Information"
+                      f"\n{C[1]}[{C[3]}1{C[1]}] scripts/get-likes => {C[2]}Get Likes of a Post"
+                      f"\n{C[1]}[{C[3]}2{C[1]}] scripts/get-comments => {C[2]}Get comments of a Post"
                       f"\n\n{C[3]}OPTIONS"
-                      f"\n{C[1]}options/version => {C[2]}Shows The Script's Version"
-                      f"\n{C[1]}options/license => {C[2]}Shows The Script's License\n"
+                      f"\n{C[1]}[{C[3]}v{C[1]}] options/version => {C[2]}Shows The Script's Version"
+                      f"\n{C[1]}[{C[3]}l{C[1]}] options/license => {C[2]}Shows The Script's License\n"
                       f"\n\n{C[3]}COMMANDS"
-                      f"\n{C[1]}show-banner => {C[2]}Shows The Script banner"
-                      f"\n{C[1]}update-script => {C[2]}Download The Latest Update Of Script"
-                      f"\n{C[1]}exit => {C[2]}Exit the Script"
+                      f"\n{C[1]}[{C[3]}77{C[1]}] show-banner => {C[2]}Shows The Script banner"
+                      f"\n{C[1]}[{C[3]}88{C[1]}] update-script => {C[2]}Download The Latest Update Of Script"
+                      f"\n{C[1]}[{C[3]}99{C[1]}] exit => {C[2]}Exit the Script"
                       f"\n{C[0]}"
                       f"\n<-------------------------------------------------------------------->\n"
                 )
                 continue
-            elif builtins.str(INPUT) == "show-banner":
+            elif builtins.str(INPUT) == "show-banner" or builtins.str(INPUT) == "77":
                 HEADER = cfonts.render(text = "InstaInfo" , colors = [f"{random.choice(F)}" , f"{random.choice(F)}"] , align = "left")
                 print(HEADER)
                 continue
-            elif builtins.str(INPUT) == "options/version":
+            elif builtins.str(INPUT) == "options/version" or builtins.str(INPUT) == "v":
                 with io.open(file = "version.txt" , mode = "r") as V:
                     print(builtins.str(V.read(5)))
                     V.close()
                     continue
-            elif builtins.str(INPUT) == "options/license":
+            elif builtins.str(INPUT) == "options/license" or builtins.str(INPUT) == "l":
                 with io.open(file = "license.txt" , mode = "r") as L:
                     print(builtins.str(L.read(5055)))
                     L.close()
                     continue
-            elif builtins.str(INPUT) == "exit" or builtins.str(INPUT) == "Exit" or builtins.str(INPUT) == "EXIT":
+            elif builtins.str(INPUT) == "exit" or builtins.str(INPUT) == "Exit"\
+                or builtins.str(INPUT) == "EXIT" or builtins.str(INPUT) == "99":
                 last_input = builtins.str(input(f"{C[1]}[{C[3]}?{C[1]}] {C[0]}Do you want to save The Progress In log.txt ?"))
-                if builtins.str(last_input) == "y" or builtins.str(last_input) == "Y" or builtins.str(last_input) == "yes" or builtins.str(last_input) == "Yes" or builtins.str(last_input) == "YES":
+                if builtins.str(last_input) == "y" or builtins.str(last_input) == "Y" or builtins.str(last_input) == "yes" \
+                    or builtins.str(last_input) == "Yes" or builtins.str(last_input) == "YES":
                     with io.open(file = r"{}".format("log/log.txt") , mode = "a" , encoding = "utf-8") as LOG:
                         LOG.write(f"Username : @{builtins.str(i.username)}\n")
                         LOG.write(f"Verified : {builtins.str(i.is_verified)}\n")
@@ -140,9 +142,10 @@ if __name__ == "__main__":
                         LOG.write("\n\r\n\r")
                         LOG.close()
                         break
-                elif builtins.str(last_input) == "n" or builtins.str(last_input) == "N" or builtins.str(last_input) == "no" or builtins.str(last_input) == "No" or builtins.str(last_input) == "NO":
+                elif builtins.str(last_input) == "n" or builtins.str(last_input) == "N" \
+                    or builtins.str(last_input) == "no" or builtins.str(last_input) == "No" or builtins.str(last_input) == "NO":
                     break
-            elif builtins.str(INPUT) == "update-script":
+            elif builtins.str(INPUT) == "update-script" or builtins.str(INPUT) == "88":
                 try:
                     subprocess.call(["git" , "clone" , "https://github.com/shervin-glitch/InstaInfo"])
                     print("[+] The Script Directory is Cloned")
@@ -154,7 +157,7 @@ if __name__ == "__main__":
                 finally:
                     print("\n")
                 continue
-            elif builtins.str(INPUT) == "scripts/print-information":
+            elif builtins.str(INPUT) == "scripts/print-information" or builtins.str(INPUT) == "0":
                 INPUT = builtins.str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[scripts/print-information] >{C[0]} "))
                 i = instagramy.InstagramUser(INPUT)
                 print(f"\n{C[1]}[{C[3]}Verified{C[1]}] {C[0]}: {C[2]}{builtins.str(i.is_verified)}")
@@ -174,12 +177,12 @@ if __name__ == "__main__":
                 print(f"{C[1]}[{C[3]}Biography{C[1]}] {C[0]}: {C[2]}{builtins.str(i.biography)}")
                 print(f"{C[1]}[{C[3]}Profile Picture Url{C[1]}] {C[0]}: {C[2]}{builtins.str(i.profile_picture_url)}")
                 continue
-            elif builtins.str(INPUT) == "scripts/get-likes":
+            elif builtins.str(INPUT) == "scripts/get-likes" or builtins.str(INPUT) == "1":
                 INPUT = builtins.list(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[scripts/get-likes] >{C[0]} ").split("/"))
                 l = instagramy.InstagramPost(INPUT[4])
                 print(f"\n{C[1]}[{C[3]}Number Of Likes{C[1]}] {C[0]}: {C[2]}{builtins.str(l.number_of_likes)}")
                 continue
-            elif builtins.str(INPUT) == "scripts/get-comments":
+            elif builtins.str(INPUT) == "scripts/get-comments" or builtins.str(INPUT) == "2":
                 INPUT = builtins.list(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[scripts/get-comments] >{C[0]} ").split("/"))
                 l = instagramy.InstagramPost(INPUT[4])
                 print(f"\n{C[1]}[{C[3]}Number Of Comments{C[1]}] {C[0]}: {C[2]}{builtins.str(l.number_of_comments)}")
