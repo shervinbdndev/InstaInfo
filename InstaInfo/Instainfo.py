@@ -167,11 +167,11 @@ if __name__ == "__main__":
                     break
             elif builtins.str(INPUT) == "update-script" or builtins.str(INPUT) == "88":
                 try:
-                    subprocess.call(["cd" , "Desktop"])
+                    os.chdir("Desktop")
                     subprocess.call(["git" , "clone" , "https://github.com/shervin-glitch/InstaInfo"])
                     print("[+] The New Script Directory is Cloned in Desktop")
                 except Exception as Err:
-                    subprocess.call(["cd" , "Desktop"])
+                    os.chdir("Desktop")
                     subprocess.call(["git" , "clone" , "https://github.com/shervin-glitch/InstaInfo"])
                     print("[+] The New Script Directory is Cloned in Desktop")
                     raise Err
