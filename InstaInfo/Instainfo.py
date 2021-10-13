@@ -54,8 +54,8 @@ if __name__ == "__main__":
           =++-.                    .-**+.         
            :=+++====---==========++**+-           
               ::----=============--:.\n
-                            {C[1]}Version: {C[0]}10.1.4
-                            {C[1]}By: {C[0]}https://github.com/shervin-glitch/"""
+            {C[1]}Version: {C[0]}10.1.4
+            {C[1]}By: {C[0]}https://github.com/shervin-glitch/"""
 
 
     def CheckSystem(systemType :builtins.str = platform.system()):
