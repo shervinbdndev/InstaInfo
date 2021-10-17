@@ -223,6 +223,9 @@ if __name__ == "__main__":
                     else:
                         print("Address Doesn't Exists")
                         continue
+            elif builtins.str(INPUT) in ["clear" , "cls"]:
+                CheckSystem()
+                continue
 
             else:
                 print(f"{C[5]}[  !  ] Wrong Command")
