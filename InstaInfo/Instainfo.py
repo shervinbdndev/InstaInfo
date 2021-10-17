@@ -213,7 +213,7 @@ if __name__ == "__main__":
                 INPUT = builtins.str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[scripts/{C[5]}REMOVER{C[2]}] >{C[0]} "))
                 if platform.system() in ["Windows" , "Linux"]:
                     if os.path.exists(builtins.str(INPUT)):
-                        if os.path.exists(INPUT + "\InstaInfo"):
+                        if os.path.exists("%s\InstaInfo" % INPUT):
                             os.chdir(INPUT)
                             shutil.rmtree("InstaInfo")
                         else:
