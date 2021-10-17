@@ -93,6 +93,7 @@ if __name__ == "__main__":
                       f"\n{C[1]}[{C[3]}1{C[1]}] scripts/get-likes => {C[2]}Enter Post Full URL to Get Likes of a Post"
                       f"\n{C[1]}[{C[3]}2{C[1]}] scripts/get-comments => {C[2]}Enter Post Full URL to Get comments of a Post"
                       f"\n{C[1]}[{C[3]}3{C[1]}] scripts/remover => {C[2]}Enter The Adderss of Old Script Directory to Delete\n"
+                      f"\n{C[1]}[{C[3]}4{C[1]}] clear => {C[2]}Clears The Terminal\n"
                       f"\n\n{C[3]}OPTIONS"
                       f"\n{C[1]}[{C[3]}v{C[1]}] options/version => {C[2]}Shows The Script's Version"
                       f"\n{C[1]}[{C[3]}l{C[1]}] options/license => {C[2]}Shows The Script's License\n"
@@ -113,6 +114,7 @@ if __name__ == "__main__":
                       f"\n{C[1]}[{C[3]}1{C[1]}] scripts/get-likes => {C[2]}Enter Post Full URL to Get Likes of a Post"
                       f"\n{C[1]}[{C[3]}2{C[1]}] scripts/get-comments => {C[2]}Enter Post Full URL to Get comments of a Post"
                       f"\n{C[1]}[{C[3]}3{C[1]}] scripts/remover => {C[2]}Enter The Adderss of Old Script Directory to Delete\n"
+                      f"\n{C[1]}[{C[3]}4{C[1]}] clear => {C[2]}Clears The Terminal\n"
                       f"\n\n{C[3]}OPTIONS"
                       f"\n{C[1]}[{C[3]}v{C[1]}] options/version => {C[2]}Shows The Script's Version"
                       f"\n{C[1]}[{C[3]}l{C[1]}] options/license => {C[2]}Shows The Script's License\n"
@@ -223,10 +225,9 @@ if __name__ == "__main__":
                     else:
                         print("Address Doesn't Exists")
                         continue
-            elif builtins.str(INPUT) in ["clear" , "cls"]:
+            elif builtins.str(INPUT) in ["clear" , "4"]:
                 CheckSystem()
                 continue
-
             else:
                 print(f"{C[5]}[  !  ] Wrong Command")
                 continue
