@@ -216,10 +216,14 @@ if __name__ == "__main__":
                         if os.path.exists("%s\InstaInfo" % INPUT):
                             os.chdir(INPUT)
                             shutil.rmtree("InstaInfo")
+                            print("[+] The Old Folder Successfully removed")
+                            continue
                         else:
                             raise Exception
                     else:
                         print("Address Doesn't Exists")
+                        continue
+
             else:
                 print(f"{C[5]}[  !  ] Wrong Command")
                 continue
