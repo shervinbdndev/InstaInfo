@@ -79,8 +79,7 @@ if __name__ == "__main__":
         time.sleep(1.5)
     HeaderFunc()
 
-    def MainScript():
-        time.sleep(1.5)
+    def HelperIntro():
         print(f"\n\n{C[1]}[{C[3]}Python Version{C[1]}] {C[0]}: {C[2]}{builtins.str(sys.version[0:6] or platform.python_version())}")
         print(f"\n{C[1]}[{C[3]}Local IP{C[1]}] {C[0]}: {C[2]}{builtins.str(socket.gethostbyname(socket.gethostname()))}")
         print(f"\n{C[1]}[{C[3]}Public IP{C[1]}] {C[0]}: {C[2]}{LOAD['ip']}")
@@ -103,27 +102,13 @@ if __name__ == "__main__":
                       f"\n{C[1]}[{C[3]}99{C[1]}] exit => {C[2]}Exit the Script"
                       f"\n\n{C[0]}<-------------------------------------------------------------------->\n"
                 )
+    HelperIntro()
+
+    def MainScript():
         while True:
             INPUT = builtins.str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[~] >{C[0]} "))
             if builtins.str(INPUT) in ["help" , "Help" , "HELP" , "?"]:
-                print(f"\n\n{C[0]}<-------------------------------------------------------------------->\n"
-                      f"\n{C[3]}HELP"
-                      f"\n{C[1]}[{C[3]}?{C[1]}] help => {C[2]}Opening The Help Center\n"
-                      f"\n\n{C[3]}SCRIPTS"
-                      f"\n{C[1]}[{C[3]}0{C[1]}] scripts/print-info => {C[2]}Enter Username For Getting Page Information"
-                      f"\n{C[1]}[{C[3]}1{C[1]}] scripts/get-likes => {C[2]}Enter Post Full URL to Get Likes of a Post"
-                      f"\n{C[1]}[{C[3]}2{C[1]}] scripts/get-comments => {C[2]}Enter Post Full URL to Get comments of a Post"
-                      f"\n{C[1]}[{C[3]}3{C[1]}] scripts/remover => {C[2]}Enter The Adderss of Old Script Directory to Delete"
-                      f"\n{C[1]}[{C[3]}4{C[1]}] clear => {C[2]}Clears The Terminal\n"
-                      f"\n\n{C[3]}OPTIONS"
-                      f"\n{C[1]}[{C[3]}v{C[1]}] options/version => {C[2]}Shows The Script's Version"
-                      f"\n{C[1]}[{C[3]}l{C[1]}] options/license => {C[2]}Shows The Script's License\n"
-                      f"\n\n{C[3]}COMMANDS"
-                      f"\n{C[1]}[{C[3]}77{C[1]}] show-banner => {C[2]}Shows The Script banner"
-                      f"\n{C[1]}[{C[3]}88{C[1]}] update-script => {C[2]}Download The Latest Update Of Script(This Command is Only Able to run in Linux)"
-                      f"\n{C[1]}[{C[3]}99{C[1]}] exit => {C[2]}Exit the Script"
-                      f"\n\n{C[0]}<-------------------------------------------------------------------->\n"
-                )
+                HelperIntro()
                 continue
             elif builtins.str(INPUT) in ["show-banner" , "77"]:
                 HEADER = cfonts.render(text = "InstaInfo" , colors = [f"{random.choice(F)}" , f"{random.choice(F)}"] , align = "left")
