@@ -104,7 +104,7 @@ if __name__ == "__main__":
                 )
         while True:
             INPUT = builtins.str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[~] >{C[0]} "))
-            if builtins.str(INPUT) == "help" or builtins.str(INPUT) == "Help" or builtins.str(INPUT) == "HELP" or builtins.str(INPUT) == "?":
+            if builtins.str(INPUT) in ["help" , "Help" , "HELP" , "?"]:
                 print(f"\n\n{C[0]}<-------------------------------------------------------------------->\n"
                       f"\n{C[3]}HELP"
                       f"\n{C[1]}[{C[3]}?{C[1]}] help => {C[2]}Opening The Help Center\n"
@@ -123,25 +123,23 @@ if __name__ == "__main__":
                       f"\n\n{C[0]}<-------------------------------------------------------------------->\n"
                 )
                 continue
-            elif builtins.str(INPUT) == "show-banner" or builtins.str(INPUT) == "77":
+            elif builtins.str(INPUT) in ["show-banner" , "77"]:
                 HEADER = cfonts.render(text = "InstaInfo" , colors = [f"{random.choice(F)}" , f"{random.choice(F)}"] , align = "left")
                 print(HEADER)
                 continue
-            elif builtins.str(INPUT) == "options/version" or builtins.str(INPUT) == "v":
+            elif builtins.str(INPUT) in ["options/version" , "v"]:
                 with io.open(file = "version.txt" , mode = "r") as V:
                     print(builtins.str(V.read(10)))
                     V.close()
                     continue
-            elif builtins.str(INPUT) == "options/license" or builtins.str(INPUT) == "l":
+            elif builtins.str(INPUT) in ["options/license" , "l"]:
                 with io.open(file = "license.txt" , mode = "r") as L:
                     print(builtins.str(L.read(5055)))
                     L.close()
                     continue
-            elif builtins.str(INPUT) == "exit" or builtins.str(INPUT) == "Exit"\
-                or builtins.str(INPUT) == "EXIT" or builtins.str(INPUT) == "99":
+            elif builtins.str(INPUT) in ["exit" , "Exit" , "EXIT" , "99"]:
                 last_input = builtins.str(input(f"{C[1]}[{C[3]}?{C[1]}] {C[0]}Do you want to save The Progress In log.txt ?"))
-                if builtins.str(last_input) == "y" or builtins.str(last_input) == "Y" or builtins.str(last_input) == "yes" \
-                    or builtins.str(last_input) == "Yes" or builtins.str(last_input) == "YES":
+                if builtins.str(last_input) in ["y" , "Y" , "yes" , "Yes" , "YES"]:
                     with io.open(file = r"{}".format("log/log.txt") , mode = "a" , encoding = "utf-8") as LOG:
                         LOG.write(f"Username : @{builtins.str(i.username)}\n")
                         LOG.write(f"Verified : {builtins.str(i.is_verified)}\n")
@@ -162,10 +160,9 @@ if __name__ == "__main__":
                         LOG.write("\n\r\n\r")
                         LOG.close()
                         break
-                elif builtins.str(last_input) == "n" or builtins.str(last_input) == "N" \
-                    or builtins.str(last_input) == "no" or builtins.str(last_input) == "No" or builtins.str(last_input) == "NO":
+                elif builtins.str(last_input) in ["n" , "N" , "no" , "No" , "NO"]:
                     break
-            elif builtins.str(INPUT) == "update-script" or builtins.str(INPUT) == "88":
+            elif builtins.str(INPUT) in ["update-script" , "88"]:
                 try:
                     os.chdir("Desktop")
                     subprocess.call(["git" , "clone" , "https://github.com/shervin-glitch/InstaInfo"])
@@ -178,7 +175,7 @@ if __name__ == "__main__":
                 finally:
                     print("\n")
                 continue
-            elif builtins.str(INPUT) == "scripts/print-info" or builtins.str(INPUT) == "0":
+            elif builtins.str(INPUT) in ["scripts/print-info" , "0"]:
                 INPUT = builtins.str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[scripts/print-info] >{C[0]} "))
                 i = instagramy.InstagramUser(INPUT)
                 print(f"\n{C[1]}[{C[3]}Verified{C[1]}] {C[0]}: {C[2]}{builtins.str(i.is_verified)}")
@@ -198,23 +195,23 @@ if __name__ == "__main__":
                 print(f"{C[1]}[{C[3]}Biography{C[1]}] {C[0]}: {C[2]}{builtins.str(i.biography)}")
                 print(f"{C[1]}[{C[3]}Profile Picture Url{C[1]}] {C[0]}: {C[2]}{builtins.str(i.profile_picture_url)}")
                 continue
-            elif builtins.str(INPUT) == "scripts/get-likes" or builtins.str(INPUT) == "1":
+            elif builtins.str(INPUT) in ["scripts/get-likes" , "1"]:
                 INPUT = builtins.list(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[scripts/get-likes] >{C[0]} ").split("/"))
                 l = instagramy.InstagramPost(INPUT[4])
                 print(f"\n{C[1]}[{C[3]}Author{C[1]}] {C[0]}: {C[2]}{builtins.str(l.author)}")
                 print(f"\n{C[1]}[{C[3]}Post ID{C[1]}] {C[0]}: {C[2]}{builtins.str(INPUT[4])}")
                 print(f"\n{C[1]}[{C[3]}Number Of Likes{C[1]}] {C[0]}: {C[2]}{builtins.str(l.number_of_likes)}")
                 continue
-            elif builtins.str(INPUT) == "scripts/get-comments" or builtins.str(INPUT) == "2":
+            elif builtins.str(INPUT) in ["scripts/get-comments" , "2"]:
                 INPUT = builtins.list(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[scripts/get-comments] >{C[0]} ").split("/"))
                 l = instagramy.InstagramPost(INPUT[4])
                 print(f"\n{C[1]}[{C[3]}Author{C[1]}] {C[0]}: {C[2]}{builtins.str(l.author)}")
                 print(f"\n{C[1]}[{C[3]}Post ID{C[1]}] {C[0]}: {C[2]}{builtins.str(INPUT[4])}")
                 print(f"\n{C[1]}[{C[3]}Number Of Comments{C[1]}] {C[0]}: {C[2]}{builtins.str(l.number_of_comments)}")
                 continue
-            elif builtins.str(INPUT) == "scripts/remover" or builtins.str(INPUT) == "3":
+            elif builtins.str(INPUT) in ["scripts/remover" , "3"]:
                 INPUT = builtins.str(input(f"\n\n{C[1]}[{C[3]}~{C[1]}] {C[1]}({C[5]}Inst4Inf0{C[1]})--$ \n{C[2]}[scripts/{C[5]}REMOVER{C[2]}] >{C[0]} "))
-                if platform.system() == builtins.str("Windows") or platform.system() == builtins.str("Linux"):
+                if platform.system() in ["Windows" , "Linux"]:
                     if os.path.exists(builtins.str(INPUT)):
                         if os.path.exists(INPUT + "\InstaInfo"):
                             os.chdir(INPUT)
